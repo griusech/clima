@@ -15,11 +15,7 @@ const Form = ({ search, setSearch, setConsult }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (ciudad.trim() === '')
-        {
-            setError(true);
-            return;
-        }
+        if (ciudad.trim() === '') return setError(true);
         setError(false);
         setConsult(true)
     }
@@ -28,12 +24,15 @@ const Form = ({ search, setSearch, setConsult }) => {
         <form
             onSubmit={handleSubmit}
         >
-            <div className="input-field col s12">
+            <div className="w-50 m-auto">
+                <label htmlFor="pais">Consultá por otra ciudad</label>
+                {error && <div>Debe seleccionar una ciudad</div>}
                 <select
                     name="ciudad"
                     id="ciudad"
                     value={ciudad}
                     onChange={handleCity}
+                    className="form-select"
                 >
                     <option value="">-- Seleccionar --</option>
                     <option value="Córdoba">Córdoba</option>
@@ -42,16 +41,14 @@ const Form = ({ search, setSearch, setConsult }) => {
                     <option value="Villa Maria">Villa Maria</option>
 
                 </select>
-
-                <label htmlFor="pais">Ciudad: </label>
             </div>
 
-            <div className="input-field col s12">
+            <div>
                 <button
                     type="submit"
                     value="Buscar Clima"
                     className="waves-effect waves-light btn-large btn-block orange lighten-2 col s12"
-                >Buscar Clima</button>
+                >Buscar</button>
             </div>
 
         </form>

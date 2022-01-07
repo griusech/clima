@@ -7,7 +7,7 @@ import Form from '../form/Form';
 const Clima = () => {
 
   const [search, setSearch] = useState({
-    ciudad: '',
+    ciudad: ''
   });
 
   const [consult, setConsult] = useState(false)
@@ -28,7 +28,7 @@ const Clima = () => {
         const fetching = await fetch(url);
         const result = await fetching.json();
 
-        const groupedResult = result.list.reduce((prev, cur) => {
+        const groupdResult = result.list.reduce((prev, cur) => {
           const currentDate = cur.dt_txt.substring(0, 10);
 
           if (!prev[currentDate]) {
@@ -39,16 +39,11 @@ const Clima = () => {
           return prev;
         }, {})
 
-        setSaveResult(groupedResult)
+        setSaveResult(groupdResult)
         setCity(result)
         setConsult(false)
 
-        if (result.cod === "404") {
-          setError(true)
-        } else {
-          setError(false)
-        }
-
+        result.cod === "404" ? setError(true) : setError(false)
       }
 
     }
@@ -60,26 +55,24 @@ const Clima = () => {
     <>
       <Navbar title="Clima" />
 
-      <div className="contenedor-form">
-        <div className="container">
-          <div className="row">
+      <div className="container m-auto">
+        <div className="text-center">
+          <div>
             ACA PONGO CLIMA DE CIUDAD LOCAL
           </div>
-          <div className="row">
-            <div className="col m12">
+            <div className="m-auto">
               <Form
                 search={search}
                 setSearch={setSearch}
                 setConsult={setConsult}
               />
             </div>
-            <div className="col m12">
+            <div className="">
               <Pronostico
                 title={city}
                 result={saveResult}
               />
             </div>
-          </div>
         </div>
       </div>
 
