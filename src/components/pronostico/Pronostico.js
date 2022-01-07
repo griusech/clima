@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Pronostico = () => {
+const Pronostico = ({ title, result }) => {
     return (
         <div>
-            
+            COMPONENTE DE PRONOSTICO
         </div>
     )
 }
