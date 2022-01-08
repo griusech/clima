@@ -1,0 +1,10 @@
+.city-search {
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    margin: 1rem 0 1rem;
+}
+
+.error-select {
+    background-color: rgb(241, 189, 185);
+}

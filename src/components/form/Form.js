@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './form.css'
 
 const Form = ({ search, setSearch, setConsult }) => {
 
@@ -21,12 +22,9 @@ const Form = ({ search, setSearch, setConsult }) => {
     }
 
     return ( 
-        <form
-            onSubmit={handleSubmit}
-        >
+        <form onSubmit={handleSubmit}>
             <div className="w-50 m-auto">
-                <label htmlFor="pais">Consultá por otra ciudad</label>
-                {error && <div>Debe seleccionar una ciudad</div>}
+                <label className="city-search" htmlFor="ciudad">Consultá por otra ciudad</label>
                 <select
                     name="ciudad"
                     id="ciudad"
@@ -34,21 +32,28 @@ const Form = ({ search, setSearch, setConsult }) => {
                     onChange={handleCity}
                     className="form-select"
                 >
-                    <option value="">-- Seleccionar --</option>
+                    <option value="">-- Seleccione una ciudad --</option>
                     <option value="Córdoba">Córdoba</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Buenos Aires">Buenos Aires</option>
                     <option value="Villa Maria">Villa Maria</option>
-
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Rosario">Rosario</option>
+                    <option value="Bariloche">Bariloche</option>
                 </select>
+                {error && 
+                    <div className="error-select mt-3">
+                        Debe seleccionar una ciudad
+                    </div>
+                }
             </div>
 
             <div>
                 <button
                     type="submit"
                     value="Buscar Clima"
-                    className="waves-effect waves-light btn-large btn-block orange lighten-2 col s12"
-                >Buscar</button>
+                    className="btn btn-info mt-3 text-white"
+                >
+                    Consultar
+                </button>
             </div>
 
         </form>

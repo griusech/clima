@@ -4,7 +4,7 @@ import Clima from './components/clima/Clima';
 
 function App() {
   return (
-    <div>
+    <div className="contentClima">
       <Clima />
     </div>
   );

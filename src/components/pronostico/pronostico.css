@@ -3,18 +3,40 @@
     justify-content: space-between;
 }
 
+.city-name {
+    font-size: 50px;
+    color: white; 
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
 .temp {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
 .card {
+    border-radius: 8px;
     width: 225px;
+    background-color: rgba(255, 255, 255, 0.705)
 }
+
+.title-day {
+    color: rgb(65, 140, 226);
+    font-size: 25px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.borderCard {
+    -webkit-box-shadow: 3px -1px 8px 0px rgba(79,146,168,1);
+    -moz-box-shadow: 3px -1px 8px 0px rgba(79,146,168,1);
+    box-shadow: 3px -1px 8px 0px rgba(79,146,168,1);
+}
+
 img {
-    width: 35%
+    width: 55%
 }
 
 @media (max-width: 991px) {
@@ -23,6 +45,6 @@ img {
         align-items: center;
     }
     .card {
-        width: 50%;
+        width: 70%;
     }
 }

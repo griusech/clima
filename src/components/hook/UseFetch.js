@@ -14,7 +14,7 @@ const UseFetch = () => {
     const { ciudad } = search;
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async() => {
 
             navigator.geolocation.getCurrentPosition(async (position) => {
 
@@ -24,25 +24,27 @@ const UseFetch = () => {
                     ? `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=${appId}`
                     : `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${appId}`
 
-                const fetching = await fetch(url);
-                const result = await fetching.json();
-
-                const groupResult = result.list.reduce((prev, cur) => {
-                    const currentDate = cur.dt_txt.substring(0, 10);
-
-                    if (!prev[currentDate]) {
-                        prev[currentDate] = [];
-                    }
-
-                    prev[currentDate].push(cur);
-                    return prev;
-                }, {})
-                setSaveResult(groupResult)
-                setCity(result)
-                setConsult(false)
-                setChange(true)
-
-                result.cod === "404" ? setError(true) : setError(false)
+                if(!change || consult) {
+                    const fetching = await fetch(url);
+                    const result = await fetching.json();
+                    
+                    const groupResult = result.list.reduce((prev, cur) => {
+                        const currentDate = cur.dt_txt.substring(0, 10);
+                        
+                        if (!prev[currentDate]) {
+                            prev[currentDate] = [];
+                        }
+                        
+                        prev[currentDate].push(cur);
+                        return prev;
+                    }, {})
+                    setSaveResult(groupResult)
+                    setCity(result)
+                    setConsult(false)
+                    setChange(true)
+                    
+                    result.cod === "404" ? setError(true) : setError(false)
+                }
             })
 
         }
