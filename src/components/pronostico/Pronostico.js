@@ -5,9 +5,24 @@ const Pronostico = ({ title, result }) => {
 
     const { city } = title;
     if (!city) return null;
-    
+
     const kelvin = 273.15
-    
+
+    const getDays = (param) => {
+        const days = [
+            'Domingo',
+            'Lunes',
+            'Martes',
+            'Miércoles',
+            'Jueves',
+            'Viernes',
+            'Sábado',
+        ];
+        const numberDay = new Date(param).getDay();
+        const nameDay = days[numberDay];
+        return nameDay;
+    }
+
     return (
         <div className="card-panel">
             <div className='mt-3'>
@@ -18,6 +33,8 @@ const Pronostico = ({ title, result }) => {
                     Object.keys(result).map((res) => (
                         <div className="card mb-3 border-info border-2 m-1 d-flex" key={res}>
                             <div className="card-body">
+                                <div>{getDays(result[res][0].dt_txt)}</div>
+                                <div>{res}</div>
                                 <div className="temp">
                                     <div>{(parseInt(result[res][0].main.temp) - kelvin).toFixed(0)}</div>
                                     <span>&#x2103;</span>
