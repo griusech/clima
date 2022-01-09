@@ -23,6 +23,8 @@ const Pronostico = ({ title, result }) => {
         return nameDay;
     }
 
+    const getResult = Object.keys(result).slice(0, 5)
+
     return (
         <div className="card-panel">
             <div className='mt-3'>
@@ -30,22 +32,17 @@ const Pronostico = ({ title, result }) => {
             </div>
             <div className="card-container mt-5">
                 {
-                    Object.keys(result).map((res) => (
+                    getResult.map((res) => (
                         <div className="card mb-3 borderCard border-2 m-1 d-flex" key={res}>
                             <div className="card-body">
                                 <div className="title-day">{getDays(result[res][0].dt_txt)}</div>
                                 <div>
-                                    <img src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${result[res][4].weather[0].icon}.svg`}></img>
+                                    <img src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${result[res][0].weather[0].icon}.svg`}></img>
                                 </div>
                                 <div className="mt-3">
-                                    <span>Max</span>
+                                    <span>Temp:</span>
                                     <div className="temp">
-                                        <div>{(parseInt(result[res][7].main.temp_max) - kelvin).toFixed(0)}</div>
-                                        <span>&#x2103;</span>
-                                    </div>
-                                    <span>Min</span>
-                                    <div className="temp">
-                                        <div>{(parseInt(result[res][4].main.temp_min) - kelvin).toFixed(0)}</div>
+                                        <div>{(parseInt(result[res][0].main.temp_max) - kelvin).toFixed(0)}</div>
                                         <span>&#x2103;</span>
                                     </div>
                                 </div>
