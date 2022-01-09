@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import './form.css'
 
-const Form = ({ search, setSearch, setConsult }) => {
+const Form = ({ search, setSearch, setConsult, setError, error }) => {
 
-    const [error, setError] = useState(false)
     const { ciudad } = search;
 
     const handleCity = e => {

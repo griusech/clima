@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const UseFetch = () => {
+const useFetch = () => {
     const [search, setSearch] = useState({
         ciudad: ''
     });
@@ -14,12 +14,11 @@ const UseFetch = () => {
     const { ciudad } = search;
 
     useEffect(() => {
-        const fetchData = async() => {
+        const fetchData = () => {
 
-            navigator.geolocation.getCurrentPosition(async (position) => {
+            navigator.geolocation.getCurrentPosition(async(position) => {
 
                 const appId = '343a1277dda37f6b5660f0f4939d089d';
-
                 const url = change
                     ? `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=${appId}`
                     : `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${appId}`
@@ -60,8 +59,10 @@ const UseFetch = () => {
         error,
         setSearch,
         search,
-        setConsult
+        setConsult,
+        setError,
+        error
     }
 }
 
-export default UseFetch
+export default useFetch

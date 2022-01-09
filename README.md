@@ -23,13 +23,13 @@ npm start
     <img src="https://i.ibb.co/1rp1tBS/aceptar.png" alt="aceptar" border="0">
 </p>
 
-1*) Si por algun motivo hizo click en cancelar, seleccione desde la barra de navegación lo siguiente
+1*) Si por algun motivo hizo click en bloquear o no le aparce la opción de permitir la ubicación, seleccione desde la barra de navegación lo siguiente
 
 <p>
     <img src="https://i.ibb.co/0GfF1Mx/select.png" alt="select" border="0">
 </p>
 
-2) La temperatura que le mostrará es siempre referente a las 00:00hs
+2) La temperatura que le mostrará es siempre la máxima, referente a las 00:00hs
 # ¿Dónde se puede visualizar el sitio?
 
 Solo ingrese al siguiente enlace:
