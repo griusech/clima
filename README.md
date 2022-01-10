@@ -35,3 +35,8 @@ npm start
 Solo ingrese al siguiente enlace:
 https://info-del-clima.netlify.app/
 
+
+# Correcciones
+1) En una rama llamda feature/fix-name-usefetch se realizó un cambio debido a que el nombre del hook, trae problemas por comenzar en mayúsculas, tan solo con cambiarlo a useFetch el error se soluciona!
+
+
