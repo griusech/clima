@@ -37,6 +37,9 @@ https://info-del-clima.netlify.app/
 
 
 # Correcciones
-1) En una rama llamda feature/fix-name-usefetch se realizó un cambio debido a que el nombre del hook, trae problemas por comenzar en mayúsculas, tan solo con cambiarlo a useFetch el error se soluciona!
+1) En una rama llamda feature/fix-name-usefetch se realizó un cambio debido a que el nombre del hook, está importado en minúscula.
+
+Si se encuentra en la rama main, tan solo cambie la mayúscula del hook a minúscula y de ese modo, podrá observar la app correctamente
+
 
 
