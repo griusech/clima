@@ -38,7 +38,7 @@ const Pronostico = ({ title, result }) => {
                                 <div className="card-body">
                                     <div className="title-day">{getDays(dt_txt)}</div>
                                     <div>
-                                        <img src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`}></img>
+                                        <img src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`} alt="iconos-clima" />
                                     </div>
                                     <div className="mt-3">
                                         <span>Temp:</span>

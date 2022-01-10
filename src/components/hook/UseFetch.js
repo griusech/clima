@@ -49,8 +49,8 @@ const useFetch = () => {
         }
 
         fetchData()
-        //eslint-disable-next-line
-    }, [consult, change])
+
+    }, [consult, change, ciudad])
 
     return {
         consult,
@@ -60,8 +60,7 @@ const useFetch = () => {
         setSearch,
         search,
         setConsult,
-        setError,
-        error
+        setError
     }
 }
 

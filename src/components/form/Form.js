@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './form.css'
 
 const Form = ({ search, setSearch, setConsult, setError, error }) => {
@@ -54,7 +54,6 @@ const Form = ({ search, setSearch, setConsult, setError, error }) => {
                     Consultar
                 </button>
             </div>
-
         </form>
      );
 }

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Clima from './components/clima/Clima';
 
