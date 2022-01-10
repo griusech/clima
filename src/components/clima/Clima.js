@@ -1,7 +1,7 @@
 import React from 'react';
 import Pronostico from '../pronostico/Pronostico';
 import Form from '../form/Form';
-import useFetch from '../hook/useFetch';
+import useFetch from '../hook/UseFetch';
 
 const Clima = () => {
 
